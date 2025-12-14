@@ -13,6 +13,6 @@ class signature-pad extends Component
 
     public function render()
     {
-        return view('ld-signature-pad::components.signature-pad');
+        return view('sb-signature-pad::components.signature-pad');
     }
 }

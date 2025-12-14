@@ -40,6 +40,6 @@ class SignaturePad extends Component
 
     public function render()
     {
-        return view('ld-signature-pad::livewire.signature-pad');
+        return view('sb-signature-pad::livewire.signature-pad');
     }
 }

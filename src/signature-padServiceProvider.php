@@ -11,14 +11,14 @@ class signature-padServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/ld-signature-pad.php', 'ld-signature-pad');
+        $this->mergeConfigFrom(__DIR__ . '/../config/sb-signature-pad.php', 'sb-signature-pad');
     }
 
     public function boot(): void
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'ld-signature-pad');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'sb-signature-pad');
 
-        Livewire::component('ld-signature-pad', signature-pad::class);
+        Livewire::component('sb-signature-pad', signature-pad::class);
 
         $this->loadViewComponentsAs('ld', [
             Bladesignature-pad::class,
@@ -26,12 +26,12 @@ class signature-padServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/ld-signature-pad.php' => config_path('ld-signature-pad.php'),
-            ], 'ld-signature-pad-config');
+                __DIR__ . '/../config/sb-signature-pad.php' => config_path('sb-signature-pad.php'),
+            ], 'sb-signature-pad-config');
 
             $this->publishes([
-                __DIR__ . '/../resources/views' => resource_path('views/vendor/ld-signature-pad'),
-            ], 'ld-signature-pad-views');
+                __DIR__ . '/../resources/views' => resource_path('views/vendor/sb-signature-pad'),
+            ], 'sb-signature-pad-views');
         }
     }
 }

@@ -1,5 +1,5 @@
 <?php
 
 return [
-    // Default settings for ld-signature-pad
+    // Default settings for sb-signature-pad
 ];

@@ -29,7 +29,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 export default {
-  name: 'LdSignaturePad',
+  name: 'SbSignaturePad',
   props: {
     modelValue: { type: String, default: '' },
     height: { type: Number, default: 200 },
