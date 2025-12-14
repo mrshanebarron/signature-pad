@@ -1,0 +1,30 @@
+{
+    "name": "mrshanebarron/signature-pad",
+    "description": "Signature pad component for Laravel",
+    "keywords": ["laravel", "signature", "pad", "draw", "livewire", "vue"],
+    "license": "MIT",
+    "authors": [{"name": "Shane Barron", "email": "mrshanebarron@gmail.com"}],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "livewire/livewire": "^3.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "pestphp/pest": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {"LaravelDesign\\signature-pad\\": "src/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"LaravelDesign\\signature-pad\\Tests\\": "tests/"}
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["LaravelDesign\\signature-pad\\signature-padServiceProvider"]
+        }
+    },
+    "config": {"sort-packages": true},
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
