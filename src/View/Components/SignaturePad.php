@@ -1,10 +1,10 @@
 <?php
 
-namespace MrShaneBarron\signature-pad\View\Components;
+namespace MrShaneBarron\SignaturePad\View\Components;
 
 use Illuminate\View\Component;
 
-class signature-pad extends Component
+class SignaturePad extends Component
 {
     public function __construct()
     {

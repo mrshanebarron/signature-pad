@@ -4,8 +4,7 @@ namespace MrShaneBarron\SignaturePad;
 
 use Illuminate\Support\ServiceProvider;
 use MrShaneBarron\SignaturePad\Livewire\SignaturePad;
-use MrShaneBarron\SignaturePad\View\Components\signature-pad as BladeSignaturePad;
-use Livewire\Livewire;
+use MrShaneBarron\SignaturePad\View\Components\SignaturePad as BladeSignaturePad;
 
 class SignaturePadServiceProvider extends ServiceProvider
 {
@@ -18,7 +17,9 @@ class SignaturePadServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'sb-signature-pad');
 
-        Livewire::component('sb-signature-pad', signature-pad::class);
+        if (class_exists(\Livewire\Livewire::class)) {
+            \Livewire\Livewire::component('sb-signature-pad', SignaturePad::class);
+        }
 
         $this->loadViewComponentsAs('ld', [
             BladeSignaturePad::class,
