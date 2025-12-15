@@ -1,13 +1,13 @@
 <?php
 
-namespace MrShaneBarron\signature-pad;
+namespace MrShaneBarron\SignaturePad;
 
 use Illuminate\Support\ServiceProvider;
-use MrShaneBarron\signature-pad\Livewire\signature-pad;
-use MrShaneBarron\signature-pad\View\Components\signature-pad as Bladesignature-pad;
+use MrShaneBarron\SignaturePad\Livewire\SignaturePad;
+use MrShaneBarron\SignaturePad\View\Components\signature-pad as BladeSignaturePad;
 use Livewire\Livewire;
 
-class signature-padServiceProvider extends ServiceProvider
+class SignaturePadServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
@@ -21,7 +21,7 @@ class signature-padServiceProvider extends ServiceProvider
         Livewire::component('sb-signature-pad', signature-pad::class);
 
         $this->loadViewComponentsAs('ld', [
-            Bladesignature-pad::class,
+            BladeSignaturePad::class,
         ]);
 
         if ($this->app->runningInConsole()) {
