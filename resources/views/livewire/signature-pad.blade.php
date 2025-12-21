@@ -8,8 +8,8 @@
         init() {
             this.canvas = this.$refs.canvas;
             this.ctx = this.canvas.getContext('2d');
-            this.ctx.strokeStyle = '{{ $strokeColor }}';
-            this.ctx.lineWidth = {{ $strokeWidth }};
+            this.ctx.strokeStyle = '{{ $this->strokeColor }}';
+            this.ctx.lineWidth = {{ $this->strokeWidth }};
             this.ctx.lineCap = 'round';
             this.ctx.lineJoin = 'round';
             this.clear();
@@ -40,7 +40,7 @@
             return [clientX - rect.left, clientY - rect.top];
         },
         clear() {
-            this.ctx.fillStyle = '{{ $backgroundColor }}';
+            this.ctx.fillStyle = '{{ $this->backgroundColor }}';
             this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
             $wire.set('signature', null);
         },
@@ -48,12 +48,12 @@
             $wire.set('signature', this.canvas.toDataURL('image/png'));
         }
     }"
-    class="inline-block"
+    style="display: inline-block;"
 >
     <canvas
         x-ref="canvas"
-        width="{{ $width }}"
-        height="{{ $height }}"
+        width="{{ $this->width }}"
+        height="{{ $this->height }}"
         @mousedown="startDrawing($event)"
         @mousemove="draw($event)"
         @mouseup="stopDrawing()"
@@ -61,13 +61,15 @@
         @touchstart.prevent="startDrawing($event)"
         @touchmove.prevent="draw($event)"
         @touchend="stopDrawing()"
-        class="border border-gray-300 rounded-lg cursor-crosshair touch-none"
+        style="border: 1px solid #d1d5db; border-radius: 8px; cursor: crosshair; touch-action: none;"
     ></canvas>
-    <div class="mt-2 flex justify-end">
+    <div style="margin-top: 8px; display: flex; justify-content: flex-end;">
         <button
             type="button"
             @click="clear()"
-            class="px-3 py-1.5 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded transition-colors"
+            style="padding: 6px 12px; font-size: 14px; color: #4b5563; background: transparent; border: none; cursor: pointer; border-radius: 4px; transition: background 0.15s;"
+            onmouseover="this.style.background='#f3f4f6'; this.style.color='#111827'"
+            onmouseout="this.style.background='transparent'; this.style.color='#4b5563'"
         >
             Clear
         </button>
