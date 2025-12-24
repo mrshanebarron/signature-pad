@@ -13,6 +13,25 @@ class SignaturePad extends Component
     public string $backgroundColor = '#ffffff';
     public ?string $signature = null;
 
+    public function mount(
+        int $width = 400,
+        int $height = 200,
+        string $strokeColor = '#000000',
+        int $strokeWidth = 2,
+        string $backgroundColor = '#ffffff'
+    ): void {
+        $this->width = $width;
+        $this->height = $height;
+        $this->strokeColor = $strokeColor;
+        $this->strokeWidth = $strokeWidth;
+        $this->backgroundColor = $backgroundColor;
+    }
+
+    public function clear(): void
+    {
+        $this->signature = null;
+    }
+
     public function render()
     {
         return view('sb-signature-pad::livewire.signature-pad');
